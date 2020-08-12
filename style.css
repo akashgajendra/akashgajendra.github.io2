@@ -1,0 +1,699 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+html{
+	scroll-behavior: smooth;
+}
+body {
+  margin:0;
+  background: #222;
+  font-family: 'Work Sans', sans-serif;
+  font-weight:500;
+  /*background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  */
+}
+
+.container{
+	width=80%;
+	margin:0 auto;
+}
+
+header{
+	/*background: #0101DF;*/
+	/*background: #55d6aa;*/
+	background: #FFFF;
+}
+
+header::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+
+.logo{
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px 0;
+	padding-left: 20px;
+}
+
+nav{
+	float: right;
+}
+
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li{
+	display: inline-block;
+	margin-left: 70px;
+	padding-top: 26px;
+	padding-right: 40px;
+	padding-bottom: 23px;
+	position: relative;
+}
+
+nav a{
+	color: #222;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+nav a:hover{
+	color: #222;
+}
+
+nav a::before{
+	content: '';
+	display: block;
+	height: 5px;
+	background-color: #222;
+	position: absolute; 
+	top: 0;
+	width: 0%;
+	transition: all ease-in-out 300ms;
+}
+
+nav a:hover::before{
+	width: 70%;
+}
+
+.boxed{
+	width:225px;
+	height:20px; 
+	vertical-align: center;
+	text-align: center;
+	margin:0 auto;
+	border: 1px solid #222;
+	padding-top: 23px;
+}
+.boxed > a{
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #222;
+}
+
+
+/*Welcome Container*/
+.description{
+	/*display: inline-block*/
+	display: flex;
+	margin-right: 150px;
+	height: 100vh;
+	z-index: 3;
+}
+
+
+/*Welcome Image Container - #1*/
+.center_1 {
+  /*margin-left: 250px;*/
+  margin-right: 20px;
+  padding-top: 20px;
+  margin-left: 250px;
+  width: 50%;
+  border-radius: 100px;
+}
+
+.image-container{
+	width: 350px;
+	height: 510px;
+	position: relative;
+	color: white;
+
+}
+
+.image-container img{
+	width: 100%;
+	height: 100%;
+}
+
+
+.fade::after{
+	content: "Disclaimer: This is me.";
+	display: flex;
+	color: white;
+	width: 100%;
+	height:100%;
+	font-size: 40;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	border-radius: 50px;
+}
+
+.fade:hover::after{
+	opacity: 0.6;
+}
+
+/*Welcome Text Container - #2*/
+.text-container{
+	display: flex;
+	flex-direction: column;
+	margin-left: 200px; 
+	font-size: 30;
+	padding-top: 40px;
+	color: white;
+	width: 31%;
+	text-align: justify;
+}
+
+.wrapper{
+	border: solid white;
+	background-color: white;
+	color: black;
+	text-align: center;
+	height: 45px;
+	/*font-size: 17px;
+	padding-top: 5px;
+	padding-bottom: 5px;*/
+}
+
+.wrapper span:before{
+	content: '';
+	animation: animate infinite 5s;
+}
+
+@keyframes animate{
+	0%{
+		content: 'SWE';
+		color: black;
+		font-size: 15;
+	}
+	50%{
+		content: 'Cyber Security';
+		color: black;
+		font-size: 15;
+	}
+	100%{
+		content: 'Data Science';
+		color: black;
+		font-size: 15;
+	}
+}
+
+a {
+   text-decoration: none;
+}
+
+
+
+.scroll-down{
+	position: absolute;
+	bottom: 5px;
+	left: 49%;
+	z-index: 20;
+	margin-top: 90vh;
+	transform: translateX(-90%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.scroll-down:active{
+	opacity: 0;
+	animation: dissapear 1s infinite;
+	color: red;
+}
+
+@keyframes dissapear{
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity:0;
+	}
+}
+
+.mouse{
+	width: 20px;
+	height: 50px;
+	border: 2px solid white;
+	border-radius: 20px;
+	display: flex;
+}
+
+
+.mouse span{
+	width: 9px;
+	height: 9px;
+	background-color: white;
+	display: block;
+	border-radius: 50%; 
+	margin:auto;
+	animation: movewheel 0.8s linear infinite;
+}
+
+
+.arrow span{
+	display: block;
+	width: 10px;
+	height: 10px;
+	border: 2px solid transparent;
+	border-right-color: white;
+	border-bottom-color: white;
+	transform: rotate(45deg); 
+	bottom: 0px;
+	animation: movearrow 1s linear infinite;
+}
+
+
+@keyframes movewheel{
+	0%{
+		opacity: 0;
+		transform: translateY(-1rem);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(+1rem);
+	}
+}
+
+@keyframes movearrow{
+	0%{
+		opacity: 0;
+	}
+	0%{
+		opacity: 0.25;
+	}
+	0%{
+		opacity: 0.50;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+/*PAGE 2*/
+.About{
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	height: 90vh;
+	width: 100%;
+	color: yellow;
+	justify-content: space-around;
+	padding-top: 20px;
+	background: linear-gradient(top,white,black);
+	z-index: 2;
+}
+
+#slider{
+	overflow: hidden;
+}
+
+#slider figure{
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	animation: 10s slider infinite;
+}
+
+#slider figure img{
+	float: left;
+	width: 20%;
+}
+
+@keyframes slider{
+	0%{
+		left: 0;
+	}
+	20%{
+		left: 0;
+	}
+	40%{
+		left: -100%;
+	}
+	60%{
+		left: -100%;
+	}
+	70%{
+		left: -200%;
+	}
+	80%{
+		left: -200%;
+	}
+	100%{
+		left: 0%;
+	}
+}
+
+.center_2 {
+  /*margin-left: 250px;*/
+  margin-right: 100px;
+  width: 30%;
+  border-radius: 100px;
+  margin-top: 30px;
+
+
+}
+
+.image-container_2{
+	width: 350px;
+	height: 510px;
+	position: relative;
+	color: white;
+	margin-left:200px;
+	margin-top: 40px; 
+}
+
+.image-container_2 img{
+	width: 100%;
+	height: 100%;
+}
+
+
+/*Welcome Text Container - #2*/
+.text-container_2{
+	display: flex;
+	flex-direction: column;
+	margin-left: 120px; 
+	font-size: 30;
+	color: white;
+	width: 30%;
+	text-align: justify;
+	margin-top: 10px;
+}
+
+
+
+.Boxes{
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+}
+
+.Resume_Box{
+	background-color: white;
+	width: 50%;
+	margin-right: 40px;
+	margin-left: 40px;
+	vertical-align: middle;
+	padding-top: 5px;
+	color: black;
+}
+
+.LinkedIn_Box{
+	background-color: white;
+	color: black;
+	width: 50%;
+	padding-top: 5px;
+	margin-right: 40px;
+	margin-left: 40px;
+	vertical-align: middle;
+}
+
+
+.Boxes a{
+	text-decoration: none;
+	color: black;
+}
+.Boxes a:visited{
+	text-decoration: none;
+	color: black;
+}
+
+h1{
+	animation: type 4.5s steps(9) infinite ;
+	animation-delay: 4.5s;
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 3px solid white;
+	width: 9ch;
+}
+
+@keyframes type{
+	0%{
+		width: 0ch;
+	}
+	100%{
+		width: 9ch;
+	}
+}
+
+.scroll-down_2{
+	position: absolute;
+	left: 49%;
+	margin-top: 84.5vh;
+	z-index: 20;
+	transform: translateX(-90%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.scroll-down_2:active{
+	opacity: 0;
+	animation: dissapear 1s infinite;
+	color: red;
+}
+
+
+
+/*PAGE 3*/
+.Work{
+	font-size: 30px;
+	margin-top: 800px;
+	padding-top: 0px;
+	height: 100vh;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.Center {
+  position:absolute;
+  margin-top: 755px;
+  top:23%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.glitch-effect > div {
+  font-size:55px;
+  text-transform:capitalize;
+}
+.glitch-effect > div:nth-child(4) {
+  color:#f5f5f5;
+  animation:moveDown 500ms ease-in-out infinite;
+}
+@keyframes moveDown {
+  0%,100% {
+    transform:translate(-50%,-50%);
+  }
+  50% {
+    transform:translate(-50%,-48.5%);
+  }
+}
+.glitch-effect > div:nth-child(3) {
+  color:blue;
+  animation:moveUp 500ms ease-in-out infinite;
+}
+@keyframes moveUp {
+  0%,100% {
+    transform:translate(-50%,-50%);
+  }
+  50% {
+    transform:translate(-50%,-51.5%);
+  }
+}
+.glitch-effect > div:nth-child(2) {
+  color:green;
+  animation:moveRight 500ms ease-in-out infinite;
+}
+@keyframes moveRight {
+  0%,100% {
+    transform:translate(-50%,-50%);
+  }
+  50% {
+    transform:translate(-48.5%,-50%);
+  }
+}
+.glitch-effect > div:nth-child(1) {
+  color:orangered;
+  animation:moveLeft 500ms ease-in-out infinite;
+}
+@keyframes moveLeft {
+  0%,100% {
+    transform:translate(-50%,-50%);
+  }
+  50% {
+    transform:translate(-51.5%,-50%);
+  }
+}
+
+.Row_1{
+	display: flex;
+	margin-bottom: -30px;
+}
+
+.Row_2{
+	display: flex;
+	margin-bottom: 30px;
+}
+
+
+.flip-card {
+  background-color: transparent;
+  margin-top: 130px;
+  margin-left: 100px;
+  width: 250px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card_B {
+  background-color: transparent;
+  margin-top: 260px;
+  margin-left: 110px;
+  width: 250px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: black;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  /*background-image: linear-gradient(blue, lightblue);*/
+  background-color: yellow;
+  color: black;
+  transform: rotateY(180deg);
+  font-size: 25px;
+}
+
+
+.Button_3{
+}
+
+.scroll-down_3{
+	position: relative;
+	left: 1366px;
+	margin-top: -6%;
+	transform: translateX(-90%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.scroll-down_3:active{
+	opacity: 0;
+	animation: dissapear 1s infinite;
+	color: red;
+}
+
+
+
+/*
+.Center{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	display: flex;
+}
+
+
+.glitch-effect>div{
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+.glitch-effect>div:nth-child(4){
+	color: #f5f5f5;
+	animation: moveDown 500ms ease-in-out infinite;
+}
+
+@keyframes moveDown{
+	0%,100%{
+		transform:translate(-50%,-50%);
+	}
+	50%{
+		transform:translate(-50%,-48%);
+	}
+}
+
+.glitch-effect>div:nth-child(3){
+	color: #f5f5f5;
+	animation: moveUp 500ms ease-in-out infinite;
+}
+
+@keyframes moveUp{
+	0%,100%{
+		transform:translate(-50%,-50%);
+	}
+	50%{
+		transform:translate(-50%,-52%);
+	}
+}
+
+.glitch-effect>div:nth-child(2){
+	color: #f5f5f5;
+	animation: moveRight 500ms ease-in-out infinite;
+}
+
+@keyframes moveRight{
+	0%,100%{
+		transform:translate(-50%,-50%);
+	}
+	50%{
+		transform:translate(-48%,-50%);
+	}
+}
+
+.glitch-effect>div:nth-child(1){
+	color: #f5f5f5;
+	animation: moveLeft 500ms ease-in-out infinite;
+}
+
+@keyframes moveLeft{
+	0%,100%{
+		transform:translate(-50%,-50%);
+	}
+	50%{
+		transform:translate(-52%,-50%);
+	}
+}
+*/
+
+
+
+
