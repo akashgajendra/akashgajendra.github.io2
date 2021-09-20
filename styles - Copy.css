@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+html{
+	scroll-behavior: smooth;
+}
+body {
+  margin:0;
+  background: #222;
+  font-family: 'Work Sans', sans-serif;
+  font-weight:500;
+  /*background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  */
+}
+
+.container{
+	width=80%;
+	margin:0 auto;
+}
+
+header{
+	/*background: #0101DF;*/
+	/*background: #55d6aa;*/
+	background: #FFFF;
+}
+
+header::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+
+.logo{
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px 0;
+	padding-left: 20px;
+}
+
+nav{
+	float: right;
+}
+
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li{
+	display: inline-block;
+	margin-left: 70px;
+	padding-top: 26px;
+	padding-right: 40px;
+	padding-bottom: 23px;
+	position: relative;
+}
+
+nav a{
+	color: #222;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+nav a:hover{
+	color: #222;
+}
+
+nav a::before{
+	content: '';
+	display: block;
+	height: 5px;
+	background-color: #222;
+	position: absolute; 
+	top: 0;
+	width: 0%;
+	transition: all ease-in-out 300ms;
+}
+
+nav a:hover::before{
+	width: 70%;
+}
+
+.boxed{
+	width:225px;
+	height:20px; 
+	vertical-align: center;
+	text-align: center;
+	margin:0 auto;
+	border: 1px solid #222;
+	padding-top: 23px;
+}
+.boxed > a{
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #222;
+}
+
+
+
+

@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+/* Navbar CSS setup */
+
+html{
+	scroll-behavior: smooth;
+}
+body {
+  margin:0;
+  background: var(--secondary-color);
+  font-family: 'Work Sans', sans-serif;
+  font-weight:500;
+  /*background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  */
+}
+
+.container{
+	/* width=80%; */
+	margin:0 auto;
+}
+
+header{
+	/*background: #0101DF;*/
+	/*background: #55d6aa;*/
+	/* background: #FFFF; */
+	background:var(--primary-color);
+}
+
+header::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+
+.logo{
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px 0;
+	padding-left: 20px;
+}
+
+nav{
+	float: right;
+}
+
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li{
+	display: inline-block;
+	margin-left: 70px;
+	padding-top: 26px;
+	padding-right: 40px;
+	padding-bottom: 23px;
+	position: relative;
+}
+
+nav a{
+	color:var(--secondary-color);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+nav a:hover{
+	color:var(--secondary-color);
+}
+
+nav a::before{
+	content: '';
+	display: block;
+	height: 5px;
+	background-color:var(--secondary-color);
+	position: absolute; 
+	top: 0;
+	width: 0%;
+	transition: all ease-in-out 300ms;
+}
+
+nav a:hover::before{
+	width: 70%;
+}
+
+.boxed{
+	width:225px;
+	height:20px; 
+	vertical-align: center;
+	text-align: center;
+	margin:0 auto;
+	border: 1px var(--secondary-color);
+	padding-top: 23px;
+}
+.boxed > a{
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--secondary-color);
+}
+
+/*Icon Period
+Navbar white color #FFFF
+Body black color #222*/
+
+:root{
+	--primary-color: #FFFF;
+	--secondary-color: #222;
+	--logo: "Images/logo.png";
+
+}
+
+.light-theme{
+	--primary-color: #222;
+	--secondary-color: #FFFF;
+	--logo:"Images/weblogo.png";
+}
+
+#icon{
+	width: 30px;
+	cursor: pointer;
+}
+
+
+/*PAGE 2 - ABOUT*/
+.About{
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	height: 90vh;
+	width: 100%;
+	color: yellow;
+	justify-content: space-around;
+	/* padding-top: 20px; */
+	padding-top: 25px;
+	background: linear-gradient(top,white,black);
+	z-index: 2;
+}
+
+#slider{
+	overflow: hidden;
+}
+
+#slider figure{
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	animation: 10s slider infinite;
+}
+
+#slider figure img{
+	float: left;
+	width: 20%;
+}
+
+@keyframes slider{
+	0%{
+		left: 0;
+	}
+	20%{
+		left: 0;
+	}
+	40%{
+		left: -100%;
+	}
+	60%{
+		left: -100%;
+	}
+	70%{
+		left: -200%;
+	}
+	80%{
+		left: -200%;
+	}
+	100%{
+		left: 0%;
+	}
+}
+
+.center_2 {
+  /*margin-left: 250px;*/
+  margin-right: 200px;
+  width: 35%;
+  border-radius: 100px;
+  margin-top: 30px;
+
+}
+
+.image-container_2{
+	width: 350px;
+	height: 510px;
+	position: relative;
+	color: white;
+	margin-left:200px;
+	margin-top: 40px; 
+}
+
+.image-container_2 img{
+	width: 100%;
+	height: 100%;
+}
+
+/*About Me Text Container - #2*/
+.text-container_2{
+	display: flex;
+	flex-direction: column;
+	/* #margin-left: 110px; */
+	margin-left: 150px; 
+	font-size: 30;
+	color: var(--primary-color);
+	width: 30%;
+	text-align: justify;
+	margin-top: 10px;
+}
+
+
+.Boxes{
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+}
+
+.Instagram_Box{
+	background-color: var(--primary-color);;
+	width: 50%;
+	margin-right: 40px;
+	margin-left: 40px;
+	vertical-align: middle;
+	padding-top: 5px;
+	color: var(--secondary-color);
+}
+
+.Quora_Box{
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+	width: 50%;
+	padding-top: 5px;
+	margin-right: 40px;
+	margin-left: 40px;
+	vertical-align: middle;
+}
+
+
+.Boxes a{
+	text-decoration: none;
+	color: var(--secondary-color);
+}
+.Boxes a:visited{
+	text-decoration: none;
+	color: var(--secondary-color);
+}
+
+h1{
+	animation: type 4.5s steps(9) infinite ;
+	animation-delay: 4.5s;
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 3px solid var(--primary-color);
+	width: 9ch;
+}
+
+@keyframes type{
+	0%{
+		width: 0ch;
+	}
+	100%{
+		width: 9ch;
+	}
+}

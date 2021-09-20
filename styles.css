@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+/* Navbar CSS setup */
+
 html{
 	scroll-behavior: smooth;
 }
 body {
   margin:0;
-  background: #222;
+  background:var(--secondary-color);
   font-family: 'Work Sans', sans-serif;
   font-weight:500;
   /*background-size: 30px 30px;
@@ -13,14 +16,14 @@ body {
 }
 
 .container{
-	width=80%;
+	/*width=80%;*/
 	margin:0 auto;
 }
 
 header{
 	/*background: #0101DF;*/
 	/*background: #55d6aa;*/
-	background: #FFFF;
+	background:var(--primary-color);
 }
 
 header::after{
@@ -57,7 +60,7 @@ nav li{
 }
 
 nav a{
-	color: #222;
+	color:var(--secondary-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 16px;
@@ -65,14 +68,14 @@ nav a{
 }
 
 nav a:hover{
-	color: #222;
+	color:var(--secondary-color);
 }
 
 nav a::before{
 	content: '';
 	display: block;
 	height: 5px;
-	background-color: #222;
+	background-color:var(--secondary-color);
 	position: absolute; 
 	top: 0;
 	width: 0%;
@@ -89,15 +92,38 @@ nav a:hover::before{
 	vertical-align: center;
 	text-align: center;
 	margin:0 auto;
-	border: 1px solid #222;
+	border: 1px var(--secondary-color);
 	padding-top: 23px;
 }
+
 .boxed > a{
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #222;
+	color: var(--secondary-color);
 }
 
+
+/*Icon Period
+Navbar white color #FFFF
+Body black color #222*/
+
+:root{
+	--primary-color: #FFFF;
+	--secondary-color: #222;
+	--logo: "Images/logo.png";
+
+}
+
+.light-theme{
+	--primary-color: #222;
+	--secondary-color: #FFFF;
+	--logo:"Images/weblogo.png";
+}
+
+#icon{
+	width: 30px;
+	cursor: pointer;
+}
 
 /*Welcome Container*/
 .description{
@@ -106,6 +132,7 @@ nav a:hover::before{
 	margin-right: 150px;
 	height: 100vh;
 	z-index: 3;
+	padding-top: 30px;
 }
 
 
@@ -113,31 +140,30 @@ nav a:hover::before{
 .center_1 {
   /*margin-left: 250px;*/
   margin-right: 20px;
-  padding-top: 20px;
+  margin-top: 30px;
   margin-left: 250px;
   width: 50%;
-  border-radius: 100px;
 }
 
 .image-container{
 	width: 350px;
 	height: 510px;
 	position: relative;
-	color: white;
-
+	color: var(--primary-color);
 }
 
 .image-container img{
-	width: 100%;
+	width: 90%;
 	height: 100%;
+	border-radius: 50px;
+	margin-left: 10%;
 }
-
 
 .fade::after{
 	content: "Disclaimer: This is me.";
 	display: flex;
 	color: white;
-	width: 100%;
+	width: 90%;
 	height:100%;
 	font-size: 40;
 	justify-content: center;
@@ -149,6 +175,7 @@ nav a:hover::before{
 	opacity: 0;
 	transition: opacity 0.5s ease;
 	border-radius: 50px;
+	margin-left: 10%;
 }
 
 .fade:hover::after{
@@ -162,15 +189,16 @@ nav a:hover::before{
 	margin-left: 200px; 
 	font-size: 30;
 	padding-top: 40px;
-	color: white;
+	color: var(--primary-color);
 	width: 31%;
 	text-align: justify;
+	border: var(--primary-color);
 }
 
 .wrapper{
-	border: solid white;
-	background-color: white;
-	color: black;
+	border: var(--primary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 	text-align: center;
 	height: 45px;
 	/*font-size: 17px;
@@ -186,17 +214,17 @@ nav a:hover::before{
 @keyframes animate{
 	0%{
 		content: 'SWE';
-		color: black;
+		color: var(--secondary-color);
 		font-size: 15;
 	}
 	50%{
 		content: 'Cyber Security';
-		color: black;
+		color:var(--secondary-color);
 		font-size: 15;
 	}
 	100%{
 		content: 'Data Science';
-		color: black;
+		color:var(--secondary-color);
 		font-size: 15;
 	}
 }
@@ -292,408 +320,3 @@ a {
 		opacity: 1;
 	}
 }
-
-/*PAGE 2*/
-.About{
-	display: flex;
-	flex-direction: row;
-	position: absolute;
-	height: 90vh;
-	width: 100%;
-	color: yellow;
-	justify-content: space-around;
-	padding-top: 20px;
-	background: linear-gradient(top,white,black);
-	z-index: 2;
-}
-
-#slider{
-	overflow: hidden;
-}
-
-#slider figure{
-	position: relative;
-	width: 500%;
-	margin: 0;
-	left: 0;
-	animation: 10s slider infinite;
-}
-
-#slider figure img{
-	float: left;
-	width: 20%;
-}
-
-@keyframes slider{
-	0%{
-		left: 0;
-	}
-	20%{
-		left: 0;
-	}
-	40%{
-		left: -100%;
-	}
-	60%{
-		left: -100%;
-	}
-	70%{
-		left: -200%;
-	}
-	80%{
-		left: -200%;
-	}
-	100%{
-		left: 0%;
-	}
-}
-
-.center_2 {
-  /*margin-left: 250px;*/
-  margin-right: 100px;
-  width: 30%;
-  border-radius: 100px;
-  margin-top: 30px;
-
-
-}
-
-.image-container_2{
-	width: 350px;
-	height: 510px;
-	position: relative;
-	color: white;
-	margin-left:200px;
-	margin-top: 40px; 
-}
-
-.image-container_2 img{
-	width: 100%;
-	height: 100%;
-}
-
-
-/*Welcome Text Container - #2*/
-.text-container_2{
-	display: flex;
-	flex-direction: column;
-	margin-left: 120px; 
-	font-size: 30;
-	color: white;
-	width: 30%;
-	text-align: justify;
-	margin-top: 10px;
-}
-
-
-
-.Boxes{
-	text-align: center;
-	display: flex;
-	flex-direction: row;
-	margin-top: 30px;
-}
-
-.Resume_Box{
-	background-color: white;
-	width: 50%;
-	margin-right: 40px;
-	margin-left: 40px;
-	vertical-align: middle;
-	padding-top: 5px;
-	color: black;
-}
-
-.LinkedIn_Box{
-	background-color: white;
-	color: black;
-	width: 50%;
-	padding-top: 5px;
-	margin-right: 40px;
-	margin-left: 40px;
-	vertical-align: middle;
-}
-
-
-.Boxes a{
-	text-decoration: none;
-	color: black;
-}
-.Boxes a:visited{
-	text-decoration: none;
-	color: black;
-}
-
-h1{
-	animation: type 4.5s steps(9) infinite ;
-	animation-delay: 4.5s;
-	overflow: hidden;
-	white-space: nowrap;
-	border-right: 3px solid white;
-	width: 9ch;
-}
-
-@keyframes type{
-	0%{
-		width: 0ch;
-	}
-	100%{
-		width: 9ch;
-	}
-}
-
-.scroll-down_2{
-	position: absolute;
-	left: 49%;
-	margin-top: 84.5vh;
-	z-index: 20;
-	transform: translateX(-90%);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.scroll-down_2:active{
-	opacity: 0;
-	animation: dissapear 1s infinite;
-	color: red;
-}
-
-
-
-/*PAGE 3*/
-.Work{
-	font-size: 30px;
-	margin-top: 800px;
-	padding-top: 0px;
-	height: 100vh;
-	z-index: 1;
-	display: flex;
-	flex-direction: column;
-}
-
-.Center {
-  position:absolute;
-  margin-top: 755px;
-  top:23%;
-  left:50%;
-  transform:translate(-50%,-50%);
-}
-.glitch-effect > div {
-  font-size:55px;
-  text-transform:capitalize;
-}
-.glitch-effect > div:nth-child(4) {
-  color:#f5f5f5;
-  animation:moveDown 500ms ease-in-out infinite;
-}
-@keyframes moveDown {
-  0%,100% {
-    transform:translate(-50%,-50%);
-  }
-  50% {
-    transform:translate(-50%,-48.5%);
-  }
-}
-.glitch-effect > div:nth-child(3) {
-  color:blue;
-  animation:moveUp 500ms ease-in-out infinite;
-}
-@keyframes moveUp {
-  0%,100% {
-    transform:translate(-50%,-50%);
-  }
-  50% {
-    transform:translate(-50%,-51.5%);
-  }
-}
-.glitch-effect > div:nth-child(2) {
-  color:green;
-  animation:moveRight 500ms ease-in-out infinite;
-}
-@keyframes moveRight {
-  0%,100% {
-    transform:translate(-50%,-50%);
-  }
-  50% {
-    transform:translate(-48.5%,-50%);
-  }
-}
-.glitch-effect > div:nth-child(1) {
-  color:orangered;
-  animation:moveLeft 500ms ease-in-out infinite;
-}
-@keyframes moveLeft {
-  0%,100% {
-    transform:translate(-50%,-50%);
-  }
-  50% {
-    transform:translate(-51.5%,-50%);
-  }
-}
-
-.Row_1{
-	display: flex;
-	margin-bottom: -30px;
-}
-
-.Row_2{
-	display: flex;
-	margin-bottom: 30px;
-}
-
-
-.flip-card {
-  background-color: transparent;
-  margin-top: 130px;
-  margin-left: 100px;
-  width: 250px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-
-.flip-card_B {
-  background-color: transparent;
-  margin-top: 260px;
-  margin-left: 110px;
-  width: 250px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: black;
-  color: black;
-}
-
-/* Style the back side */
-.flip-card-back {
-  /*background-image: linear-gradient(blue, lightblue);*/
-  background-color: yellow;
-  color: black;
-  transform: rotateY(180deg);
-  font-size: 25px;
-}
-
-
-.Button_3{
-}
-
-.scroll-down_3{
-	position: relative;
-	left: 1366px;
-	margin-top: -6%;
-	transform: translateX(-90%);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.scroll-down_3:active{
-	opacity: 0;
-	animation: dissapear 1s infinite;
-	color: red;
-}
-
-
-
-/*
-.Center{
-	position: absolute;
-	transform: translate(-50%,-50%);
-	display: flex;
-}
-
-
-.glitch-effect>div{
-	font-size: 30px;
-	text-transform: uppercase;
-}
-
-.glitch-effect>div:nth-child(4){
-	color: #f5f5f5;
-	animation: moveDown 500ms ease-in-out infinite;
-}
-
-@keyframes moveDown{
-	0%,100%{
-		transform:translate(-50%,-50%);
-	}
-	50%{
-		transform:translate(-50%,-48%);
-	}
-}
-
-.glitch-effect>div:nth-child(3){
-	color: #f5f5f5;
-	animation: moveUp 500ms ease-in-out infinite;
-}
-
-@keyframes moveUp{
-	0%,100%{
-		transform:translate(-50%,-50%);
-	}
-	50%{
-		transform:translate(-50%,-52%);
-	}
-}
-
-.glitch-effect>div:nth-child(2){
-	color: #f5f5f5;
-	animation: moveRight 500ms ease-in-out infinite;
-}
-
-@keyframes moveRight{
-	0%,100%{
-		transform:translate(-50%,-50%);
-	}
-	50%{
-		transform:translate(-48%,-50%);
-	}
-}
-
-.glitch-effect>div:nth-child(1){
-	color: #f5f5f5;
-	animation: moveLeft 500ms ease-in-out infinite;
-}
-
-@keyframes moveLeft{
-	0%,100%{
-		transform:translate(-50%,-50%);
-	}
-	50%{
-		transform:translate(-52%,-50%);
-	}
-}
-*/
-
-
-
-
